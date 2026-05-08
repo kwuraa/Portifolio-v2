@@ -1,0 +1,107 @@
+
+.terminal-window {
+  width: 100%;
+  max-width: 918px;
+  height: 764px;
+  background-color: rgba(15, 10, 25, 0.6); 
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px); 
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  
+  overflow: hidden;
+  font-family: 'Fira Code', monospace;
+}
+
+/* Cabeçalho */
+.terminal-header {
+  background-color: #1e1e2e;
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.terminal-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.terminal-buttons span {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.btn-close { background-color: #ff5f56; }
+.btn-minimize { background-color: #ffbd2e; }
+.btn-maximize { background-color: #27c93f; }
+
+.terminal-title {
+  width: 100%;
+  text-align: center;
+  color: #94a3b8;
+  font-size: 12px;
+  opacity: 0.6;
+}
+
+/* Corpo do Terminal */
+.terminal-body {
+  padding: 20px;
+  color: #e2e8f0;
+  line-height: 1.6;
+
+}
+
+.user-host {
+  color: #4ade80; /* Verde */
+}
+
+.command {
+  color: #ffffff;
+}
+
+.terminal-content {
+  margin-top: 15px;
+}
+
+.highlight {
+  color: #a855f7; /* Roxo */
+  font-weight: bold;
+}
+
+.bio {
+  color: #94a3b8;
+  font-style: italic;
+  margin-top: 10px;
+}
+
+.skills-list {
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
+.skill-category {
+  color: #f472b6; /* Rosa */
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
+
+/* Cursor piscando */
+.terminal-cursor {
+  display: inline-block;
+  width: 8px;
+  height: 18px;
+  background-color: white;
+  margin-left: 5px;
+  animation: blink 1s infinite;
+  vertical-align: middle;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
