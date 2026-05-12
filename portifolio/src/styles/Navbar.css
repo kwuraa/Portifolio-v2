@@ -14,14 +14,16 @@
 .nav-pill {
   pointer-events: auto; 
   display: flex;
+  justify-content: center;
   align-items: center;
-  gap: 40px; 
-  padding: 12px 48px;
+  gap: 99px; 
+  height: 68px;
+  width: 517px;
   background-color: rgba(15, 10, 25, 0.6); 
   backdrop-filter: blur(12px); 
   -webkit-backdrop-filter: blur(12px); 
   border: 1px solid rgba(255, 255, 255, 0.1); 
-  border-radius: 50px; 
+  border-radius: 16px; 
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 }
 
@@ -30,7 +32,7 @@
   color: #94a3b8; 
   text-decoration: none;
   font-family: 'Inter', sans-serif;
-  font-size: 14px;
+  font-size: 21px;
   font-weight: 500;
   transition: all 0.3s ease;
   letter-spacing: 0.5px;

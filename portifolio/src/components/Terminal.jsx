@@ -4,7 +4,7 @@ import "../styles/Terminal.css"
 
 const Terminal = () => {
   return (
-    <div className="terminal-window">
+    <container className="terminal-window">
       <div className="terminal-header">
         <div className="terminal-buttons">
           <span className="btn-close"></span>
@@ -40,9 +40,9 @@ const Terminal = () => {
           <p><span className="skill-category">backend:</span> Node.js | SQL | APIs REST</p>
         </div>
 
-        <div className="terminal-cursor"></div>
+        <span className="terminal-cursor"></span>
       </div>
-    </div>
+    </container>
   );
 };
 
