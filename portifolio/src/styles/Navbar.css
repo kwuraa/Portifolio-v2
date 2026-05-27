@@ -38,9 +38,13 @@
   letter-spacing: 0.5px;
 }
 
+.color-highlight {
+  color: #AF91DE;
+}
+
 
 .nav-link:hover {
-  color: #ffffff; 
+  color: #a855f7; 
   text-shadow: 0 0 8px rgba(255, 255, 255, 0.5); 
 }
 

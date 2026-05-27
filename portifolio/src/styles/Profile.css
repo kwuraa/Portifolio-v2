@@ -1,0 +1,19 @@
+.profile-window {
+    width: 100%;
+    min-width: 346px;
+    height: 426px;
+    background-color: rgba( 15, 10, 25, 0.6);
+    background-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(225, 225, 225, 0.1)
+    border-radius: 12px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+
+    overflow: hidden;
+    font-family: 'Fira Code', monospace;
+}
+
+.profile-photo {
+    width: 10px;
+    height: auto;
+}
