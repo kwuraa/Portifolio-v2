@@ -1,4 +1,6 @@
 .profile-window {
+    display: flex;
+    flex-direction: column;
     width: 100%;
     min-width: 346px;
     height: 426px;
@@ -14,6 +16,7 @@
 }
 
 .profile-photo {
-    width: 10px;
+    width: 150px;
     height: auto;
 }
+
