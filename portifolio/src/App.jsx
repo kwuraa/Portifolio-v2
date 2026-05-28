@@ -10,9 +10,11 @@ function App() {
    <div className="bg-main">
     <Navbar/>
       <div className="container-layout">
-    <Terminal/>
-    <Profile/>
-    </div>
+        <section className='hero-section'>
+          <Terminal/>
+          <Profile/>
+        </section>
+      </div>
    </div>
   )
 }

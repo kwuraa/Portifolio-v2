@@ -1,8 +1,8 @@
 
 .terminal-window {
   width: 100%;
-  max-width: 918px;
-  height: 626px;
+  max-width: 750px;
+  height: 450px;
   background-color: rgba(15, 10, 25, 0.6); 
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px); 

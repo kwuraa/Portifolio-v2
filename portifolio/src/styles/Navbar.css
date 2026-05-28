@@ -46,6 +46,7 @@
 .nav-link:hover {
   color: #a855f7; 
   text-shadow: 0 0 8px rgba(255, 255, 255, 0.5); 
+  transform: scale(1.1);
 }
 
 @media (max-width: 480px) {
