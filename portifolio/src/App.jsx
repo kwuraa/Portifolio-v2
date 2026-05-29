@@ -14,6 +14,10 @@ function App() {
           <Terminal/>
           <Profile/>
         </section>
+        <section className="section-title-container">
+          <h2 className="section-title">~/Projetos</h2>
+          <span className="title-line"></span>
+        </section>
       </div>
    </div>
   )

@@ -53,6 +53,29 @@ body, html {
   gap: 40px;
 }
 
+.section-title-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+  margin: 5px 0
+}
+
+.section-title {
+  font-family: 'Fira Code', monospace;
+  color: #e2e8f0;
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.title-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0));
+}
+
 @media (max-width: 1024px) {
   .hero-section {
     flex-direction: column;
