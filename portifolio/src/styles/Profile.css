@@ -73,14 +73,22 @@
 
 @media (max-width: 768px) {
     .profile-window {
-        position: relative;
+    min-height: auto; 
+    height: auto;              
+    min-height: 300px;
+    max-width: 100%;            
+    
+    border: none;
+    border-radius: 0;
 
-        top: auto;
-        right: auto;
-
-        width: 95%;
-        margin: 20px auto;
-
-        min-height: auto;
+    padding: 0;
+    margin: 0 0 40px;
+    
+    box-shadow: none;
     }
+
+.terminal-btn-profile {
+    display: none;
+}
+    
 }

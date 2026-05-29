@@ -14,7 +14,7 @@
   font-family: 'Fira Code', monospace;
 }
 
-/* Cabeçalho */
+
 .terminal-header {
   background-color: #1e1e2e;
   padding: 10px 15px;
@@ -46,7 +46,7 @@
   opacity: 0.6;
 }
 
-/* Corpo do Terminal */
+
 .terminal-body {
   padding: 20px;
   color: #e2e8f0;
@@ -56,6 +56,13 @@
 
 .terminal-line{
   padding-top: 16px;
+}
+
+.greeting::before {
+  content: "❯ ";
+  color: #a855f7;
+  font-weight: bold;
+  margin-right: 8px;
 }
 
 .user-host {
@@ -107,4 +114,42 @@
 @keyframes blink {
   0%, 100% { opacity: 1; }
   50% { opacity: 0; }
+}
+
+@media (max-width: 768px) {
+
+  .terminal-window {
+    height: auto;              
+    min-height: 300px;
+    max-width: 100%;            
+    
+    border-left: none;
+    border-right: none;
+    border-radius: 0;
+    
+    padding: 24px 16px;
+    box-shadow: none;
+  }
+
+  .terminal-body {
+      padding: 0;
+  }
+
+  .terminal-header {
+    display: none
+  }
+
+  .terminal-content {
+    padding-top: 10px;
+  }
+
+  .user-host {
+    display: none 
+  }
+  .command::before {
+    content: "❯ ";
+    color: #a855f7; 
+    font-weight: bold;
+    margin-right: 8px;
+  }
 }

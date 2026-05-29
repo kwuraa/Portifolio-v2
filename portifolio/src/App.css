@@ -1,6 +1,3 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
 * {
   margin: 0;
@@ -80,6 +77,18 @@ body, html {
   .hero-section {
     flex-direction: column;
     align-items: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .container-layout {
+    margin: 0;
+    padding: 0;
+    gap: 0;
+  }
+
+  .hero-section {
+    gap: 0;
   }
 }
 

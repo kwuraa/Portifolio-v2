@@ -22,7 +22,7 @@ const Terminal = () => {
         </div>
 
         <div className="terminal-content">
-          <p className="greeting">{">"}.. Olá, eu sou o <span className="highlight">Matheus</span>!</p>
+          <p className="greeting">.. Olá, eu sou o <span className="highlight">Matheus</span>!</p>
           <p className="bio">
             "Sou um estudante de Desenvolvimento Web apaixonado por transformar
             linhas de código em experiências digitais funcionais e intuitivas.

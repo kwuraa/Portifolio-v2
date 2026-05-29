@@ -87,11 +87,15 @@
   transform: scale(1.1);
 }
 
+.dock-container-mobile {
+  display: none ; 
+}
+
 @media (max-width: 768px) {
   .nav-pill, 
   .nav-toggle-btn, 
   .nav-toggle-btn.visible {
-    display: none !important;
+    display: none ;
   }
 
   .dock-container-mobile {
