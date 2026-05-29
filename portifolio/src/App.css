@@ -49,6 +49,8 @@ body, html {
 .hero-section {
   display: flex;
   flex-direction: row;
+  justify-content: flex-start;
+  gap: 40px;
 }
 
 @media (max-width: 1024px) {

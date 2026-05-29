@@ -1,17 +1,12 @@
 
-.nav-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  padding-top: 32px; 
-  z-index: 1000;
-  pointer-events: none; 
-}
-
 .nav-pill {
+  position: fixed;
+  top: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+  z-index: 1000;
+
   pointer-events: auto; 
   display: flex;
   justify-content: center;
@@ -25,6 +20,49 @@
   border: 1px solid rgba(255, 255, 255, 0.1); 
   border-radius: 16px; 
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.nav-pill.hidden {
+  transform: translate(-50%, -100%); 
+  opacity: 0;
+}
+
+.nav-pill.open {
+  transform: translate(-50%, 0);
+  opacity: 1;
+}
+
+.nav-toggle-btn {
+  position: fixed;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50px);
+  opacity: 0;
+  transition: transform 0.4s ease, opacity 0.3s ease;
+  z-index: 1000;
+
+  background: rgba(15, 10, 25, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #a855f7;
+  padding: 6px 16px;
+  border-radius: 0 0 12px 12px; 
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+
+.nav-toggle-btn.visible {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+  top: 0;
+}
+
+.nav-toggle-btn:hover {
+  color: #ffffff;
+  background: rgba(15, 10, 25, 1);
 }
 
 
