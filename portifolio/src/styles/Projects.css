@@ -1,9 +1,8 @@
 .projects-section {
-  background-color: #13111c;
   color: #ffffff;
-  padding: 40px 20px;
+  padding: 40px 80px 0px 0px;
   min-height: 100vh;
-  font-family: 'Fira Code', monospace; 
+  font-family: "Fira Code", monospace;
 }
 
 .projects-wrapper {
@@ -13,30 +12,32 @@
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); 
+  grid-template-columns: repeat(2, 1fr);
   gap: 24px;
 }
 
 .project-card {
-  background-color: #161224; 
-  border: 1px solid rgba(88, 28, 135, 0.4); 
+  background-color: #161224;
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 12px;
   padding: 24px;
-  height: 180px;
+  height: 250px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   text-decoration: none;
   color: inherit;
-  transition: transform 0.3s ease, border-color 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease;
   box-sizing: border-box;
 
   overflow: hidden;
 }
 
 .project-card:hover {
-    transform: translateY(-4px);
-    border-color: rgba(167, 139, 250, 0.6);
+  transform: translateY(-4px);
+  border-color: rgba(167, 139, 250, 0.6);
 }
 
 .project-card h3 {
@@ -67,16 +68,16 @@
 }
 
 .card-lang {
-    display: flex;
-    align-items: center;
-    gap: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .lang-dot {
-    width: 8px;
-    height: 8px;
-    background-color: #a78bfa;
-    border-radius: 50%;
+  width: 8px;
+  height: 8px;
+  background-color: #a78bfa;
+  border-radius: 50%;
 }
 
 .skeleton {
@@ -89,7 +90,7 @@
 
 .project-preview {
   width: 100%;
-  height: 140px; 
+  height: 140px;
   background-color: #0f0d1a;
   overflow: hidden;
   border-bottom: 1px solid rgba(88, 28, 135, 0.2);
@@ -98,8 +99,8 @@
 .project-preview img {
   width: 100%;
   height: 100%;
-  object-fit: cover; 
-  object-position: top; 
+  object-fit: cover;
+  object-position: top;
 }
 
 .no-preview {
@@ -119,13 +120,23 @@
 }
 
 @keyframes pulse {
-  0% { opacity: 0.6; }
-  50% { opacity: 0.3; }
-  100% { opacity: 0.6; }
+  0% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 0.6;
+  }
 }
 
 @media (max-width: 768px) {
   .projects-grid {
     grid-template-columns: 1fr;
+  }
+
+  .projects-section {
+    padding: 40px 20px;
   }
 }

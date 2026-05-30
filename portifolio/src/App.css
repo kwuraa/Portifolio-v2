@@ -90,6 +90,10 @@ body, html {
   .hero-section {
     gap: 0;
   }
+
+  .section-title-container {
+    padding: 20px;
+  }
 }
 
 
