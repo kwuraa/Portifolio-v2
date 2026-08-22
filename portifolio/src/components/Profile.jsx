@@ -18,10 +18,13 @@ const Profile = () => {
       <section className="profile-content">
         <img src={foto} alt="" className="profile-photo" />
         <div className="profile-social">
-          <a href="#" className="btn-social">
+          <a href="https://github.com/kwuraa" className="btn-social">
             <FiGithub className="social-icons" size={38} />
           </a>
-          <a href="#" className="btn-social">
+          <a
+            href="https://www.linkedin.com/in/matheus-morais-kawamura-765435248/"
+            className="btn-social"
+          >
             <FaLinkedin className="social-icons" size={38} />
           </a>
           <a href="#" className="btn-social">
