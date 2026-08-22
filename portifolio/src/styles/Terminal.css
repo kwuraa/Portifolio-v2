@@ -1,19 +1,17 @@
-
 .terminal-window {
-  width: 100%;
+  width: 739px;
   max-width: 750px;
   height: 450px;
-  background-color: rgba(15, 10, 25, 0.6); 
+  background-color: rgba(15, 10, 25, 0.6);
   backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px); 
+  -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 12px;
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-  
-  overflow: hidden;
-  font-family: 'Fira Code', monospace;
-}
 
+  overflow: hidden;
+  font-family: "Fira Code", monospace;
+}
 
 .terminal-header {
   background-color: #1e1e2e;
@@ -34,9 +32,15 @@
   border-radius: 50%;
 }
 
-.btn-close { background-color: #ff5f56; }
-.btn-minimize { background-color: #ffbd2e; }
-.btn-maximize { background-color: #27c93f; }
+.btn-close {
+  background-color: #ff5f56;
+}
+.btn-minimize {
+  background-color: #ffbd2e;
+}
+.btn-maximize {
+  background-color: #27c93f;
+}
 
 .terminal-title {
   width: 100%;
@@ -46,15 +50,13 @@
   opacity: 0.6;
 }
 
-
 .terminal-body {
   padding: 20px;
   color: #e2e8f0;
   line-height: 1.6;
-
 }
 
-.terminal-line{
+.terminal-line {
   padding-top: 16px;
 }
 
@@ -78,7 +80,7 @@
 }
 
 .highlight {
-  color: #a855f7; 
+  color: #a855f7;
   font-weight: bold;
 }
 
@@ -94,7 +96,7 @@
 }
 
 .skill-category {
-  color: #f472b6; 
+  color: #f472b6;
 }
 
 .mt-20 {
@@ -112,31 +114,35 @@
 }
 
 @keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
 }
 
 @media (max-width: 768px) {
-
   .terminal-window {
-    height: auto;              
+    height: auto;
     min-height: 300px;
-    max-width: 100%;            
-    
+    max-width: 100%;
+
     border-left: none;
     border-right: none;
     border-radius: 0;
-    
+
     padding: 24px 16px;
     box-shadow: none;
   }
 
   .terminal-body {
-      padding: 0;
+    padding: 0;
   }
 
   .terminal-header {
-    display: none
+    display: none;
   }
 
   .terminal-content {
@@ -144,11 +150,11 @@
   }
 
   .user-host {
-    display: none 
+    display: none;
   }
   .command::before {
     content: "❯ ";
-    color: #a855f7; 
+    color: #a855f7;
     font-weight: bold;
     margin-right: 8px;
   }

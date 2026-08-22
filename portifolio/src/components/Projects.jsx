@@ -25,7 +25,7 @@ export default function Projects() {
   }, []);
 
   return (
-    <section className="projects-section">
+    <section id="projects" className="projects-section">
       <div className="projects-wrapper">
         {loading ? (
           <div className="projects-grid">

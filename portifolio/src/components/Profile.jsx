@@ -1,4 +1,3 @@
-import react from "react";
 import "../styles/Profile.css";
 import foto from "../assets/profile.jfif";
 import { FaLinkedin } from "react-icons/fa";
