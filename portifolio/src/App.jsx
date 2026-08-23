@@ -6,6 +6,7 @@ import Profile from "./components/Profile.jsx";
 import Projects from "./components/Projects.jsx";
 import TypewriterText from "./components/TypewreiterText.jsx";
 import BootLoader from "./components/BootLoader.jsx";
+import Footer from "./components/Footer.jsx";
 import "./App.css";
 
 function App() {
@@ -108,6 +109,7 @@ function App() {
           </section>
           <Projects />
         </div>
+        <Footer />
       </div>
     </>
   );

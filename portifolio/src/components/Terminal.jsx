@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion, useDragControls } from "framer-motion";
 import "../styles/Terminal.css";
-import TypewriterText from "./TypewreiterText";
 
 const Terminal = ({
   title = "kawamura — bash",
