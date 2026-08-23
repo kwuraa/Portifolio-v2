@@ -11,6 +11,11 @@
 
   overflow: hidden;
   font-family: "Fira Code", monospace;
+
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
 
 .terminal-header {
@@ -19,6 +24,11 @@
   display: flex;
   align-items: center;
   position: relative;
+  cursor: grab;
+}
+
+.terminal-header:active {
+  cursor: grabbing;
 }
 
 .terminal-buttons {
@@ -157,5 +167,12 @@
     color: #a855f7;
     font-weight: bold;
     margin-right: 8px;
+  }
+
+  .terminal-window {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
   }
 }
