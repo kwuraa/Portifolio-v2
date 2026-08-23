@@ -102,6 +102,10 @@ html {
   scroll-behavior: smooth;
 }
 
+.bio-container {
+  min-height: 58px;
+}
+
 @media (max-width: 1024px) {
   .hero-section {
     flex-direction: column;

@@ -25,11 +25,13 @@ function App() {
                 <p className="greeting">
                   .. Olá, eu sou o <span className="highlight">Matheus</span>!
                 </p>
-                <p className="bio">
-                  <TypewriterText text="Desenvolvedor Full Stack Freelancer ajudando startups a transformarem ideias em produtos web escaláveis ..." />
-                </p>
+                <div className="bio-container">
+                  <p className="bio">
+                    <TypewriterText text="Desenvolvedor Full Stack Freelancer ajudando startups a transformarem ideias em produtos web escaláveis ..." />
+                  </p>
+                </div>
               </div>
-              <div className="terminal-line mt-20">
+              <div className="terminal-line">
                 <span className="user-host">kawamura@portfolio:~$</span>
                 <span className="command"> ls skills/</span>
               </div>
