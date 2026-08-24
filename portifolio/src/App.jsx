@@ -8,6 +8,7 @@ import TypewriterText from "./components/TypewreiterText.jsx";
 import BootLoader from "./components/BootLoader.jsx";
 import Footer from "./components/Footer.jsx";
 import { SpeedInsights } from "@vercel/speed-insights/react";
+import { Analytics } from "@vercel/analytics/react";
 
 import WelcomeTerminalContent from "./components/TerminalContents/WelcomeTerminalContent.jsx";
 import ServicesTerminalContent from "./components/TerminalContents/ServicesTerminalContent.jsx";
@@ -36,6 +37,7 @@ function App() {
       <div id="home" className="bg-main">
         <Navbar />
         <SpeedInsights />
+        <Analytics />
         <div className="container-layout">
           <section className="hero-section">
             {isMobile ? (
