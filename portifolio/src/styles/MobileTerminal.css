@@ -1,0 +1,76 @@
+.mobile-terminal-container {
+  width: 100%;
+  background-color: #0f0a19;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  overflow: hidden;
+  font-family: "Fira Code", monospace;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+  margin-bottom: 20px;
+}
+
+.mobile-terminal-header {
+  background-color: #1e1e2e;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.mobile-terminal-body {
+  padding: 24px 16px;
+  color: #e2e8f0;
+}
+
+.mobile-profile-section .profile-window {
+  border: none;
+  background: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+  max-width: 100%;
+}
+
+.mobile-profile-section .profile-window .profile-photo {
+  display: block;
+  width: 220px;
+  height: 220px;
+  margin: 0 auto 16px;
+  border-radius: 50%;
+}
+
+.mobile-profile-section .profile-window .profile-content {
+  margin: 0;
+  gap: 16px;
+}
+
+.mobile-terminal-body .greeting {
+  color: #c084fc;
+  opacity: 1;
+}
+
+.mobile-terminal-body .bio,
+.mobile-terminal-body p {
+  color: #cbd5e1;
+  opacity: 1;
+}
+
+.mobile-terminal-body .highlight {
+  color: #f472b6;
+  opacity: 1;
+  font-weight: bold;
+}
+
+.mobile-divider {
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(168, 85, 247, 0.4),
+    transparent
+  );
+  margin: 24px 0;
+}
