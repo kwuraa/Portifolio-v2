@@ -12,7 +12,7 @@ const Terminal = ({
   const dragControls = useDragControls();
 
   useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth <= 768);
+    const handleResize = () => setIsMobile(window.innerWidth <= 1024);
     handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
@@ -21,23 +21,30 @@ const Terminal = ({
   return (
     <motion.div
       className={`terminal-window ${className}`}
+      style={
+        isMobile
+          ? {
+              position: "relative",
+              top: "auto",
+              left: "auto",
+              right: "auto",
+              transform: "none",
+            }
+          : {}
+      }
       drag={!isMobile}
       dragControls={dragControls}
       dragListener={false}
       dragSnapToOrigin={true}
       dragElastic={0.2}
       dragTransition={{ bounceStiffness: 300, bounceDamping: 20 }}
-      animate={{ scale: [1, 1.03, 1] }}
-      transition={{
-        duration: 0.5,
-        delay: 1.2,
-        ease: "easeInOut",
-      }}
-      whileTap={{
-        scale: 1.05,
-        cursor: "grabbing",
-        transition: { duration: 0.05 },
-      }}
+      animate={!isMobile ? { scale: [1, 1.03, 1] } : { scale: 1 }}
+      transition={{ duration: 0.5, delay: 1.2, ease: "easeInOut" }}
+      whileTap={
+        !isMobile
+          ? { scale: 1.05, cursor: "grabbing", transition: { duration: 0.05 } }
+          : {}
+      }
     >
       <div
         className="terminal-header"

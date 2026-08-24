@@ -1,38 +1,37 @@
 .profile-window {
-  
-    flex: 0 0 280px;
+  flex: 0 0 280px;
 
-    width: 100%;
-    max-width: 280px; 
-    height: 100%;
-    min-height: 340px;
+  width: 100%;
+  max-width: 280px;
+  height: 100%;
+  min-height: 340px;
 
-    margin-top: 50px;
+  margin-top: 50px;
 
-    background-color: rgba(15, 10, 25, 0.6);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 12px;
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  background-color: rgba(15, 10, 25, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
 
-    overflow: hidden;
-    font-family: 'Fira Code', monospace;
-    box-sizing: border-box;
+  overflow: hidden;
+  font-family: "Fira Code", monospace;
+  box-sizing: border-box;
 }
 
 .terminal-profile-header {
-    padding: 10px 15px;
-    display: flex;
-    align-items: center;
-    position: relative;
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  position: relative;
 }
 
-.profile-photo  {
-    width: 150px;
-    height: auto;
-    border-radius: 50%;
-    object-fit: cover;
+.profile-photo {
+  width: 150px;
+  height: auto;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 .terminal-btn-profile {
@@ -47,48 +46,44 @@
 }
 
 .profile-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 36px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 36px;
 
-    margin: 46px auto;
+  margin: 46px auto;
 }
 
 .profile-social {
-    display: flex;
-    gap: 36px;
+  display: flex;
+  gap: 36px;
 }
 
 .social-icons {
-    color: #fff;
-    transition: all 0.3s ease-in-out
+  color: #fff;
+  transition: all 0.3s ease-in-out;
 }
 
 .btn-social:hover .social-icons {
-    color: #a855f7; 
-    text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
-    transform: scale(1.2);
+  color: #a855f7;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+  transform: scale(1.2);
 }
 
 @media (max-width: 768px) {
-    .profile-window {
-    min-height: auto; 
-    height: auto;              
-    min-height: 300px;
-    max-width: 100%;            
-    
+  .profile-window {
+    height: auto;
+    min-height: 343px;
+    max-width: 100%;
     border: none;
     border-radius: 0;
-
-    padding: 0;
-    margin: 0 0 40px;
-    
     box-shadow: none;
-    }
+    background-color: transparent;
+    margin: 0;
+    padding: 20px 0;
+  }
 
-.terminal-btn-profile {
+  .terminal-btn-profile {
     display: none;
-}
-    
+  }
 }

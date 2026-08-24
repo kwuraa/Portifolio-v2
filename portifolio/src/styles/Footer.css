@@ -46,25 +46,6 @@
   }
 }
 
-.footer-links {
-  display: flex;
-  gap: 24px;
-}
-
-.footer-links a {
-  color: #c084fc;
-  text-decoration: none;
-  font-size: 0.9rem;
-  transition:
-    color 0.2s ease,
-    transform 0.2s ease;
-}
-
-.footer-links a:hover {
-  color: #f8fafc;
-  transform: translateY(-2px);
-}
-
 .footer-copy {
   font-size: 0.75rem;
   color: #64748b;

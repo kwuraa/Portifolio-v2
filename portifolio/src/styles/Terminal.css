@@ -1,17 +1,15 @@
 .terminal-window {
-  width: 739px;
-  max-width: 750px;
-  height: 450px;
+  width: 100%;
+  height: auto;
+  min-height: 250px;
   background-color: rgba(15, 10, 25, 0.6);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 12px;
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-
   overflow: hidden;
   font-family: "Fira Code", monospace;
-
   user-select: none;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -45,9 +43,11 @@
 .btn-close {
   background-color: #ff5f56;
 }
+
 .btn-minimize {
   background-color: #ffbd2e;
 }
+
 .btn-maximize {
   background-color: #27c93f;
 }
@@ -136,43 +136,20 @@
 @media (max-width: 768px) {
   .terminal-window {
     height: auto;
-    min-height: 300px;
+    min-height: auto;
     max-width: 100%;
-
-    border-left: none;
-    border-right: none;
+    border: none;
     border-radius: 0;
-
-    padding: 24px 16px;
     box-shadow: none;
-  }
-
-  .terminal-body {
-    padding: 0;
+    background-color: transparent;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   }
 
   .terminal-header {
     display: none;
   }
 
-  .terminal-content {
-    padding-top: 10px;
-  }
-
-  .user-host {
-    display: none;
-  }
-  .command::before {
-    content: "❯ ";
-    color: #a855f7;
-    font-weight: bold;
-    margin-right: 8px;
-  }
-
-  .terminal-window {
-    user-select: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
+  .terminal-body {
+    padding: 24px 16px;
   }
 }

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { AnimatePresence } from "framer-motion";
 import Navbar from "./components/Navbar.jsx";
 import Terminal from "./components/Terminal.jsx";
@@ -7,102 +7,77 @@ import Projects from "./components/Projects.jsx";
 import TypewriterText from "./components/TypewreiterText.jsx";
 import BootLoader from "./components/BootLoader.jsx";
 import Footer from "./components/Footer.jsx";
+
+import WelcomeTerminalContent from "./components/TerminalContents/WelcomeTerminalContent.jsx";
+import ServicesTerminalContent from "./components/TerminalContents/ServicesTerminalContent.jsx";
+import AboutTerminalContent from "./components/TerminalContents/AboutTerminalContent.jsx";
+import MobileTerminal from "./components/MobileTerminal.jsx";
+
 import "./App.css";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth <= 768);
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <>
       <AnimatePresence>
         {isLoading && <BootLoader onComplete={() => setIsLoading(false)} />}
       </AnimatePresence>
+
       <div id="home" className="bg-main">
         <Navbar />
         <div className="container-layout">
           <section className="hero-section">
-            <div className="windows-container">
-              <Terminal
-                className="terminalAbout"
-                title="kawamura — bash — 626 x 71"
-                hint={
-                  <TypewriterText
-                    className="terminal-drag-hint "
-                    text={"Clique e Segure no topo para Arrastar as janelas"}
-                  />
-                }
-              >
-                <div className="terminal-line ">
-                  <span className="user-host">kawamura@portfolio:~$</span>
-                  <span className="command"> cat about_me.txt</span>
-                </div>
-                <div className="terminal-content">
-                  <p className="greeting">
-                    .. Olá, eu sou o <span className="highlight">Matheus</span>!
-                  </p>
-                  <div className="bio-container">
-                    <p className="bio">
-                      <TypewriterText text="Desenvolvedor Full Stack Freelancer ajudando startups a transformarem ideias em produtos web escaláveis ..." />
-                    </p>
-                  </div>
-                </div>
-                <div className="terminal-line">
-                  <span className="user-host">kawamura@portfolio:~$</span>
-                  <span className="command"> ls skills/</span>
-                </div>
-                <div className="skills-list">
-                  <p>
-                    <span className="skill-category">frontend:</span> HTML5 |
-                    CSS3 | JavaScript | React
-                  </p>
-                  <p>
-                    <span className="skill-category">backend:</span> Node.js |
-                    SQL | APIs REST
-                  </p>
-                </div>
-              </Terminal>
-              <Terminal
-                className="terminalServices"
-                title="kawamura — bash — services"
-              >
-                <div className="terminal-line">
-                  <span className="user-host">kawamura@portfolio:~$</span>
-                  <span className="command"> cat services.txt</span>
-                </div>
-                <div className="terminal-content">
-                  <p className="greeting">
-                    .. O que posso fazer pelo seu negócio:
-                  </p>
-                  <div className="services-list mt-10">
-                    <p>
-                      <span className="highlight">[01]</span> Landing Pages &
-                      Sites
-                    </p>
-                    <p className="bio">
-                      <TypewriterText text="Páginas modernas e otimizadas para converter visitantes em clientes." />
-                    </p>
+            {isMobile ? (
+              <MobileTerminal isLoading={isLoading} />
+            ) : (
+              <>
+                <div className="windows-container">
+                  <Terminal
+                    className="terminalWelcome"
+                    title="kawamura — bash — 626 x 71"
+                    hint={
+                      <TypewriterText
+                        isLoading={isLoading}
+                        delay={400}
+                        speed={20}
+                        className="terminal-drag-hint"
+                        text={
+                          "Clique e Segure no topo para Arrastar as janelas"
+                        }
+                      />
+                    }
+                  >
+                    <WelcomeTerminalContent isLoading={isLoading} />
+                  </Terminal>
 
-                    <p className="mt-10">
-                      <span className="highlight">[02]</span> Aplicações Web
-                    </p>
-                    <p className="bio">
-                      <TypewriterText text="Sistemas web sob medida, funcionais e fáceis de manter." />
-                    </p>
+                  <Terminal
+                    className="terminalStack"
+                    title="kawamura — bash — stack"
+                  >
+                    <AboutTerminalContent isLoading={isLoading} />
+                  </Terminal>
 
-                    <p className="mt-10">
-                      <span className="highlight">[03]</span> Manutenção &
-                      Correções
-                    </p>
-                    <p className="bio">
-                      "
-                      <TypewriterText text="Ajustes de layout, melhorias de velocidade e correção de bugs." />
-                      "
-                    </p>
-                  </div>
+                  <Terminal
+                    className="terminalServices"
+                    title="kawamura — bash — services"
+                  >
+                    <ServicesTerminalContent isLoading={isLoading} />
+                  </Terminal>
                 </div>
-              </Terminal>
-            </div>
-            <Profile />
+                <Profile />
+              </>
+            )}
           </section>
+
           <section className="section-title-container">
             <h2 className="section-title">~/Projetos</h2>
             <span className="title-line"></span>
