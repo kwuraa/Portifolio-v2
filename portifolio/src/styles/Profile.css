@@ -19,6 +19,8 @@
   overflow: hidden;
   font-family: "Fira Code", monospace;
   box-sizing: border-box;
+
+  z-index: 10;
 }
 
 .terminal-profile-header {

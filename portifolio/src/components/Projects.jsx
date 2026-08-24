@@ -17,13 +17,55 @@ export default function Projects() {
     const USERNAME = "kwuraa";
     const URL = `https://api.github.com/users/${USERNAME}/repos?sort=updated&per_page=4`;
 
+    const fallbackProjects = [
+      {
+        id: 1,
+        name: "erp-system",
+        html_url: "https://github.com/kwuraa/erp-system",
+        language: "TypeScript",
+        stargazers_count: 0,
+      },
+      {
+        id: 2,
+        name: "erp-backend",
+        html_url: "https://github.com/kwuraa/erp-backend",
+        language: "TypeScript",
+        stargazers_count: 0,
+      },
+      {
+        id: 3,
+        name: "Portifolio-v2",
+        html_url: "https://github.com/kwuraa/Portifolio-v2",
+        language: "JavaScript",
+        stargazers_count: 0,
+      },
+      {
+        id: 4,
+        name: "CinetCalc",
+        html_url: "https://github.com/kwuraa/CinetCalc",
+        language: "CSS",
+        stargazers_count: 0,
+      },
+    ];
+
     fetch(URL)
-      .then((res) => res.json())
-      .then((data) => {
-        setProjects(data);
-        setLoading(false);
+      .then((res) => {
+        if (!res.ok) throw new Error("Falha na requisição");
+        return res.json();
       })
-      .catch(() => setLoading(false));
+      .then((data) => {
+        if (Array.isArray(data)) {
+          setProjects(data);
+        } else {
+          setProjects(fallbackProjects);
+        }
+      })
+      .catch(() => {
+        setProjects(fallbackProjects);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
   }, []);
 
   return (
