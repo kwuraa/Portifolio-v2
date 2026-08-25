@@ -1,12 +1,18 @@
 :root {
   --bg-dark: #0b0813;
-  --bg-purple-primary: rgba(76, 29, 149, 0.25);
-  --bg-purple-secondary: rgba(76, 29, 149, 0.15);
+  --bg-panel: rgba(18, 12, 36, 0.78);
+  --bg-purple-primary: rgba(116, 66, 214, 0.22);
+  --bg-purple-secondary: rgba(10, 126, 130, 0.15);
   --text-main: #e2e8f0;
   --text-accent: #8be9fd;
-  --line-border: rgba(255, 255, 255, 0.2);
+  --text-soft: #b9bfd3;
+  --line-border: rgba(255, 255, 255, 0.18);
+  --accent-violet: #a78bfa;
+  --accent-cyan: #8be9fd;
   --font-mono: "Fira Code", monospace;
+  --font-display: "Iowan Old Style", "Georgia", serif;
   --shadow-heavy: -15px 15px 40px rgba(0, 0, 0, 0.5);
+  --transition-fast: 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 *,
@@ -27,6 +33,8 @@ html,
 body {
   width: 100%;
   min-height: 100dvh;
+  background: var(--bg-dark);
+  color: var(--text-main);
 }
 
 .mt-10 {
@@ -36,7 +44,12 @@ body {
 .bg-main {
   background:
     radial-gradient(
-      circle at 80% 0%,
+      circle at 18% 10%,
+      rgba(167, 139, 250, 0.22) 0%,
+      transparent 26%
+    ),
+    radial-gradient(
+      circle at 82% 0%,
       var(--bg-purple-primary) 0%,
       transparent 50%
     ),
@@ -57,88 +70,80 @@ body {
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
-  padding: clamp(2rem, 8vw, 9.375rem) 1.25rem 3.75rem
-    clamp(1.25rem, 5vw, 6.25rem);
+  padding: clamp(2rem, 5vw, 5rem) clamp(1.25rem, 4vw, 3.75rem);
   display: flex;
   flex-direction: column;
-  gap: 5rem;
+  gap: clamp(2.5rem, 6vw, 5rem);
 }
 
 .hero-section {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 2.5rem;
-  padding: 0 1.25rem;
-  width: 100%;
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(220px, 0.5fr);
+  align-items: center;
+  gap: 1rem;
+  width: 95rem;
+  min-height: 620px;
 }
 
 .windows-container {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: auto auto auto;
-  align-items: start;
-  width: 100%;
-  min-height: 650px;
   position: relative;
+  width: min(100%, 1010px);
+  height: 560px;
+  justify-self: center;
+  margin-top: 2.5rem;
+  right: 18%;
 }
 
 .terminalWelcome,
 .terminalStack,
 .terminalServices {
-  width: 100%;
   transition:
-    transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+    transform var(--transition-fast),
     box-shadow 0.35s ease,
-    z-index 0s,
-    opacity 0.35s ease,
-    filter 0.35s ease;
-  will-change: transform, box-shadow;
+    opacity 0.35s ease;
+  will-change: transform;
   cursor: pointer;
 }
 
 .terminalWelcome {
-  grid-column: 1 / span 8;
-  grid-row: 1;
-  max-width: 700px;
-  height: 420px;
+  position: absolute;
+  left: clamp(24px, 5vw, 120px);
+  top: 0;
+  width: clamp(320px, 44vw, 760px);
+  height: clamp(200px, 24vw, 330px);
   z-index: 1;
 }
 
 .terminalStack {
-  grid-column: 2 / span 6;
-  grid-row: 2;
-  margin-top: -120px;
-  max-width: 480px;
-  height: 260px;
+  position: absolute;
+  left: clamp(8px, 2vw, 20px);
+  top: clamp(170px, 28vw, 270px);
+  width: clamp(260px, 30vw, 540px);
+  height: clamp(130px, 16vw, 280px);
   z-index: 2;
 }
 
 .terminalServices {
-  grid-column: 5 / span 8;
-  grid-row: 1 / span 2;
-  margin-top: 60px;
-  max-width: 720px;
-  height: 440px;
+  position: absolute;
+  left: clamp(200px, 33vw, 670px);
+  top: clamp(100px, 17vw, 220px);
+  width: clamp(280px, 34vw, 650px);
+  height: clamp(180px, 21vw, 400px);
   z-index: 4;
-  box-shadow: var(--shadow-heavy);
 }
 
 .terminalWelcome:hover,
 .terminalStack:hover,
 .terminalServices:hover {
-  z-index: 10 !important;
+  z-index: 10;
   transform: translateY(-8px) scale(1.01);
-  box-shadow:
-    0 20px 40px rgba(0, 0, 0, 0.6),
-    0 0 20px rgba(139, 233, 253, 0.2);
+  box-shadow: 0 18px 30px rgba(0, 0, 0, 0.22);
 }
 
 .windows-container:hover .terminalWelcome:not(:hover),
 .windows-container:hover .terminalStack:not(:hover),
 .windows-container:hover .terminalServices:not(:hover) {
-  opacity: 0.6;
-  filter: blur(1px);
+  opacity: 0.75;
 }
 
 .section-title-container {
@@ -188,75 +193,101 @@ body {
   }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1366px) {
   .hero-section {
-    flex-direction: column;
-    align-items: center;
+    grid-template-columns: minmax(0, 1fr) 220px;
+    gap: 0.75rem;
+    width: 100%;
   }
 
   .windows-container {
+    width: min(100%, 760px);
+    height: 430px;
+  }
+
+  .terminalWelcome {
+    left: clamp(20px, 26vw, 119px);
+    width: min(58vw, 652px);
+    top: -11%;
+    height: clamp(220px, 30vw, 322px);
+  }
+
+  .terminalStack {
+    left: 9%;
+    top: 52%;
+    width: min(42vw, 388px);
+  }
+
+  .terminalServices {
+    left: clamp(240px, 53vw, 520px);
+    top: 176px;
+    width: min(47vw, 620px);
+    height: clamp(190px, 45vw, 400px);
+  }
+}
+
+@media (max-width: 900px) {
+  .hero-section {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 1.5rem;
+  }
+
+  .windows-container {
+    width: min(100%, 620px);
+    height: 360px;
+  }
+
+  .terminalWelcome {
+    left: 24px;
+    width: min(70vw, 430px);
+    height: 240px;
+  }
+
+  .terminalStack {
+    left: 0;
+    top: 160px;
+    width: min(52vw, 330px);
+    height: 180px;
+  }
+
+  .terminalServices {
+    left: 220px;
+    top: 100px;
+    width: min(58vw, 360px);
+    height: 210px;
+  }
+}
+
+@media (max-width: 680px) {
+  .container-layout {
+    padding: 1.25rem 1rem;
+  }
+
+  .hero-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .windows-container {
+    position: static;
+    width: 100%;
+    height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 1.25rem;
-    min-height: auto;
   }
 
   .terminalWelcome,
-  .terminalAbout,
   .terminalServices,
   .terminalStack {
-    grid-column: auto;
-    grid-row: auto;
-    margin-top: 0;
-    transform: none;
     position: relative;
-    inset: auto;
-    margin: 0;
+    left: auto;
+    top: auto;
     width: 100%;
-    max-width: 90%;
     height: auto;
-  }
-
-  .terminalServices {
-    box-shadow: none;
-  }
-
-  .terminalWelcome:hover,
-  .terminalStack:hover,
-  .terminalServices:hover {
-    transform: none;
-    z-index: auto !important;
-  }
-
-  .windows-container:hover .terminalWelcome:not(:hover),
-  .windows-container:hover .terminalStack:not(:hover),
-  .windows-container:hover .terminalServices:not(:hover) {
-    opacity: 1;
-    filter: none;
-  }
-}
-
-@media (max-width: 768px) {
-  .container-layout {
-    padding: 0.625rem 0;
-    gap: 0;
-  }
-
-  .hero-section {
-    padding: 0.625rem 0;
-    flex-direction: column-reverse;
-  }
-
-  .terminalWelcome,
-  .terminalAbout,
-  .terminalServices,
-  .terminalStack {
-    max-width: 100%;
-  }
-
-  .section-title-container {
-    padding: 1.25rem;
   }
 
   .terminal-drag-hint {

@@ -6,7 +6,7 @@ import { SiGmail } from "react-icons/si";
 
 const Profile = () => {
   return (
-    <div className="profile-window">
+    <div className="profile-window" id="contact">
       <section className="terminal-profile-header">
         <div className="terminal-btn-profile">
           <span className="btn-close"></span>
@@ -26,7 +26,7 @@ const Profile = () => {
           >
             <FaLinkedin className="social-icons" size={38} />
           </a>
-          <a href="#" className="btn-social">
+          <a href="mailto:matheus.kawamura@gmail.com" className="btn-social">
             <SiGmail className="social-icons" size={38} />
           </a>
         </div>

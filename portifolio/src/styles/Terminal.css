@@ -17,9 +17,9 @@
   width: 100%;
   height: auto;
   min-height: 250px;
-  background-color: var(--term-bg);
+  background: rgba(15, 10, 25, 0.7);
   backdrop-filter: blur(12px);
-  border: 1px solid var(--term-border);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 12px;
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
   overflow: hidden;
@@ -27,17 +27,13 @@
 }
 
 .terminal-header {
-  background-color: var(--term-header-bg);
+  background-color: #1e1e2e;
   padding: 10px 15px;
   display: flex;
   align-items: center;
   position: relative;
   cursor: grab;
   user-select: none;
-}
-
-.terminal-header:active {
-  cursor: grabbing;
 }
 
 .terminal-buttons {

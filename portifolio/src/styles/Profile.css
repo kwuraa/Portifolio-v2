@@ -10,12 +10,16 @@
 }
 
 .profile-window {
-  flex: 0 0 280px;
-  width: 100%;
-  max-width: 280px;
-  height: 100%;
-  min-height: 340px;
-  margin-top: 50px;
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 clamp(220px, 18vw, 260px);
+  width: clamp(220px, 18vw, 260px);
+
+  margin-left: auto;
+  margin-right: clamp(10px, 1.5vw, 24px);
+
   background-color: var(--profile-bg);
   backdrop-filter: blur(12px);
   border: 1px solid var(--profile-border);
@@ -24,7 +28,7 @@
   overflow: hidden;
   font-family: var(--font-mono);
   box-sizing: border-box;
-  z-index: 10;
+  z-index: 5;
 }
 
 .terminal-profile-header {
@@ -92,6 +96,15 @@
   transform: scale(1.2);
 }
 
+@media (max-width: 1366px) {
+  .profile-window {
+    width: clamp(220px, 20vw, 260px);
+    margin-right: clamp(10px, 2vw, 24px);
+    bottom: 7%;
+    right: 34%;
+  }
+}
+
 @media (max-width: 768px) {
   .profile-window {
     height: auto;
@@ -103,6 +116,10 @@
     background-color: transparent;
     margin: 0;
     padding: 20px 0;
+    transform: none;
+    justify-self: center;
+    right: 0;
+    bottom: 0;
   }
 
   .terminal-btn-profile {
