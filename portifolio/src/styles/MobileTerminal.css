@@ -1,26 +1,42 @@
+:root {
+  --mob-term-bg: #0f0a19;
+  --mob-term-header-bg: #1e1e2e;
+  --mob-term-border: rgba(255, 255, 255, 0.12);
+  --mob-term-border-header: rgba(255, 255, 255, 0.05);
+
+  --mob-text-main: #e2e8f0;
+  --mob-text-muted: #cbd5e1;
+  --mob-accent-purple: #c084fc;
+  --mob-accent-pink: #f472b6;
+  --mob-divider-color: rgba(168, 85, 247, 0.4);
+
+  --font-mono: "Fira Code", monospace;
+  --shadow-mob-term: 0 20px 40px rgba(0, 0, 0, 0.6);
+}
+
 .mobile-terminal-container {
   width: 100%;
-  background-color: #0f0a19;
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background-color: var(--mob-term-bg);
+  border: 1px solid var(--mob-term-border);
   border-radius: 12px;
   overflow: hidden;
-  font-family: "Fira Code", monospace;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
-  margin-bottom: 20px;
+  font-family: var(--font-mono);
+  box-shadow: var(--shadow-mob-term);
+  margin-bottom: 1.25rem;
 }
 
 .mobile-terminal-header {
-  background-color: #1e1e2e;
+  background-color: var(--mob-term-header-bg);
   padding: 12px 16px;
   display: flex;
   align-items: center;
   position: relative;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid var(--mob-term-border-header);
 }
 
 .mobile-terminal-body {
   padding: 24px 16px;
-  color: #e2e8f0;
+  color: var(--mob-text-main);
 }
 
 .mobile-profile-section .profile-window {
@@ -40,6 +56,7 @@
   height: 220px;
   margin: 0 auto 16px;
   border-radius: 50%;
+  object-fit: cover;
 }
 
 .mobile-profile-section .profile-window .profile-content {
@@ -48,18 +65,18 @@
 }
 
 .mobile-terminal-body .greeting {
-  color: #c084fc;
+  color: var(--mob-accent-purple);
   opacity: 1;
 }
 
 .mobile-terminal-body .bio,
 .mobile-terminal-body p {
-  color: #cbd5e1;
+  color: var(--mob-text-muted);
   opacity: 1;
 }
 
 .mobile-terminal-body .highlight {
-  color: #f472b6;
+  color: var(--mob-accent-pink);
   opacity: 1;
   font-weight: bold;
 }
@@ -69,7 +86,7 @@
   background: linear-gradient(
     to right,
     transparent,
-    rgba(168, 85, 247, 0.4),
+    var(--mob-divider-color),
     transparent
   );
   margin: 24px 0;

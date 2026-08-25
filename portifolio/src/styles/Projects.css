@@ -1,3 +1,23 @@
+:root {
+  --card-bg: rgba(18, 12, 36, 0.7);
+  --card-header-bg: rgba(13, 8, 25, 0.9);
+  --card-footer-bg: rgba(13, 8, 25, 0.4);
+  --preview-bg: #090613;
+  --border-purple: rgba(139, 92, 246, 0.25);
+  --border-purple-hover: rgba(168, 85, 247, 0.6);
+  --text-title: #f8fafc;
+  --text-muted: #94a3b8;
+  --text-stars: #cbd5e1;
+  --accent-purple: #a855f7;
+  --accent-tag-text: #c084fc;
+  --accent-tag-bg: rgba(168, 85, 247, 0.12);
+  --dot-close: #ff5f56;
+  --dot-min: #ffbd2e;
+  --dot-max: #27c93f;
+  --font-mono: "Fira Code", monospace;
+  --font-sans: system-ui, -apple-system, sans-serif;
+}
+
 .projects-wrapper {
   width: 100%;
   max-width: 1050px;
@@ -7,18 +27,12 @@
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
-}
-
-@media (max-width: 768px) {
-  .projects-grid {
-    grid-template-columns: 1fr;
-  }
+  gap: 1.5rem;
 }
 
 .project-card {
-  background: rgba(18, 12, 36, 0.7);
-  border: 1px solid rgba(139, 92, 246, 0.25);
+  background: var(--card-bg);
+  border: 1px solid var(--border-purple);
   border-radius: 12px;
   overflow: hidden;
   text-decoration: none;
@@ -28,16 +42,19 @@
   backdrop-filter: blur(8px);
   transition:
     border-color 0.2s ease,
-    box-shadow 0.2s ease;
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+  will-change: transform, box-shadow;
 }
 
 .project-card:hover {
-  border-color: rgba(168, 85, 247, 0.6);
+  border-color: var(--border-purple-hover);
   box-shadow: 0 10px 30px rgba(168, 85, 247, 0.2);
+  transform: translateY(-2px);
 }
 
 .card-header {
-  background: rgba(13, 8, 25, 0.9);
+  background: var(--card-header-bg);
   padding: 10px 14px;
   display: flex;
   align-items: center;
@@ -55,25 +72,28 @@
   height: 9px;
   border-radius: 50%;
 }
+
 .dot-close {
-  background-color: #ff5f56;
+  background-color: var(--dot-close);
 }
+
 .dot-min {
-  background-color: #ffbd2e;
+  background-color: var(--dot-min);
 }
+
 .dot-max {
-  background-color: #27c93f;
+  background-color: var(--dot-max);
 }
 
 .card-path {
-  font-family: "Fira Code", monospace;
+  font-family: var(--font-mono);
   font-size: 0.8rem;
-  color: #94a3b8;
+  color: var(--text-muted);
 }
 
 .project-preview {
   height: 190px;
-  background: #090613;
+  background: var(--preview-bg);
   overflow: hidden;
   position: relative;
   border-bottom: 1px solid rgba(255, 255, 255, 0.03);
@@ -96,13 +116,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #a855f7;
-  font-family: "Fira Code", monospace;
+  color: var(--accent-purple);
+  font-family: var(--font-mono);
   font-size: 0.9rem;
   background: radial-gradient(
     circle,
     rgba(168, 85, 247, 0.08) 0%,
-    rgba(9, 6, 19, 1) 100%
+    var(--preview-bg) 100%
   );
 }
 
@@ -111,22 +131,16 @@
 }
 
 .card-body h3 {
-  font-family:
-    system-ui,
-    -apple-system,
-    sans-serif;
-  color: #f8fafc;
+  font-family: var(--font-sans);
+  color: var(--text-title);
   font-size: 1.15rem;
   font-weight: 600;
   margin-bottom: 8px;
 }
 
 .card-body p {
-  font-family:
-    system-ui,
-    -apple-system,
-    sans-serif;
-  color: #94a3b8;
+  font-family: var(--font-sans);
+  color: var(--text-muted);
   font-size: 0.88rem;
   line-height: 1.5;
   display: -webkit-box;
@@ -138,7 +152,7 @@
 
 .card-footer {
   padding: 12px 18px;
-  background: rgba(13, 8, 25, 0.4);
+  background: var(--card-footer-bg);
   border-top: 1px solid rgba(255, 255, 255, 0.04);
   display: flex;
   justify-content: space-between;
@@ -146,17 +160,23 @@
 }
 
 .tech-tag {
-  font-family: "Fira Code", monospace;
+  font-family: var(--font-mono);
   font-size: 0.75rem;
   padding: 4px 10px;
   border-radius: 5px;
-  background: rgba(168, 85, 247, 0.12);
-  color: #c084fc;
-  border: 1px solid rgba(168, 85, 247, 0.25);
+  background: var(--accent-tag-bg);
+  color: var(--accent-tag-text);
+  border: 1px solid var(--border-purple);
 }
 
 .card-stars {
-  font-family: "Fira Code", monospace;
+  font-family: var(--font-mono);
   font-size: 0.8rem;
-  color: #cbd5e1;
+  color: var(--text-stars);
+}
+
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
 }

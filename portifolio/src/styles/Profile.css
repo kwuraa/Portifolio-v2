@@ -1,25 +1,29 @@
+:root {
+  --profile-bg: rgba(15, 10, 25, 0.6);
+  --profile-border: rgba(255, 255, 255, 0.1);
+  --profile-text: #ffffff;
+  --accent-purple: #a855f7;
+  --btn-close: #ff5f56;
+  --btn-minimize: #ffbd2e;
+  --btn-maximize: #27c93f;
+  --font-mono: "Fira Code", monospace;
+}
+
 .profile-window {
   flex: 0 0 280px;
-
   width: 100%;
   max-width: 280px;
   height: 100%;
   min-height: 340px;
-
   margin-top: 50px;
-
-  background-color: rgba(15, 10, 25, 0.6);
-  -webkit-backdrop-filter: blur(12px);
+  background-color: var(--profile-bg);
   backdrop-filter: blur(12px);
-
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--profile-border);
   border-radius: 12px;
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-
   overflow: hidden;
-  font-family: "Fira Code", monospace;
+  font-family: var(--font-mono);
   box-sizing: border-box;
-
   z-index: 10;
 }
 
@@ -32,7 +36,7 @@
 
 .profile-photo {
   width: 150px;
-  height: auto;
+  height: 150px;
   border-radius: 50%;
   object-fit: cover;
 }
@@ -48,12 +52,23 @@
   border-radius: 50%;
 }
 
+.btn-close {
+  background-color: var(--btn-close);
+}
+
+.btn-minimize {
+  background-color: var(--btn-minimize);
+}
+
+.btn-maximize {
+  background-color: var(--btn-maximize);
+}
+
 .profile-content {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 36px;
-
   margin: 46px auto;
 }
 
@@ -63,13 +78,17 @@
 }
 
 .social-icons {
-  color: #fff;
-  transition: all 0.3s ease-in-out;
+  color: var(--profile-text);
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease,
+    filter 0.3s ease;
+  will-change: transform, color;
 }
 
 .btn-social:hover .social-icons {
-  color: #a855f7;
-  text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+  color: var(--accent-purple);
+  filter: drop-shadow(0 0 8px rgba(168, 85, 247, 0.6));
   transform: scale(1.2);
 }
 

@@ -1,3 +1,24 @@
+:root {
+  --nav-bg: rgba(15, 10, 25, 0.6);
+  --nav-bg-solid: rgba(15, 10, 25, 1);
+  --nav-bg-btn: rgba(15, 10, 25, 0.8);
+  --nav-border: rgba(255, 255, 255, 0.1);
+  --dock-bg: rgba(15, 10, 25, 0.65);
+  --dock-border: rgba(255, 255, 255, 0.08);
+  --dock-item-bg: rgba(255, 255, 255, 0.03);
+  --dock-item-active: rgba(168, 85, 247, 0.2);
+
+  --text-muted: #94a3b8;
+  --text-white: #ffffff;
+  --text-dock: #e2e8f0;
+  --accent-purple: #a855f7;
+  --accent-soft-purple: #af91de;
+
+  --font-sans: "Inter", sans-serif;
+  --shadow-nav: 0 10px 30px rgba(0, 0, 0, 0.4);
+  --shadow-dock: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
 .nav-pill {
   position: fixed;
   top: 32px;
@@ -7,7 +28,6 @@
     transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
     opacity 0.3s ease;
   z-index: 1000;
-
   pointer-events: auto;
   display: flex;
   justify-content: center;
@@ -15,12 +35,11 @@
   gap: 99px;
   height: 68px;
   width: 517px;
-  -webkit-backdrop-filter: blur(12px);
-  background-color: rgba(15, 10, 25, 0.6);
+  background-color: var(--nav-bg);
   backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--nav-border);
   border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  box-shadow: var(--shadow-nav);
 }
 
 .nav-pill.hidden {
@@ -41,20 +60,19 @@
   opacity: 0;
   transition:
     transform 0.4s ease,
-    opacity 0.3s ease;
+    opacity 0.3s ease,
+    color 0.2s ease,
+    background-color 0.2s ease;
   z-index: 1000;
-
-  background: rgba(15, 10, 25, 0.8);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  -webkit-backdrop-filter: blur(8px);
+  background: var(--nav-bg-btn);
+  border: 1px solid var(--nav-border);
   backdrop-filter: blur(8px);
-
-  color: #a855f7;
+  color: var(--accent-purple);
   padding: 6px 16px;
   border-radius: 0 0 12px 12px;
   cursor: pointer;
-  font-size: 14px;
-  font-weight: bold;
+  font-size: 0.875rem;
+  font-weight: 700;
 }
 
 .nav-toggle-btn.visible {
@@ -64,27 +82,31 @@
 }
 
 .nav-toggle-btn:hover {
-  color: #ffffff;
-  background: rgba(15, 10, 25, 1);
+  color: var(--text-white);
+  background: var(--nav-bg-solid);
 }
 
 .nav-link {
-  color: #94a3b8;
+  color: var(--text-muted);
   text-decoration: none;
-  font-family: "Inter", sans-serif;
-  font-size: 21px;
+  font-family: var(--font-sans);
+  font-size: 1.3125rem;
   font-weight: 500;
-  transition: all 0.3s ease;
   letter-spacing: 0.5px;
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease,
+    filter 0.3s ease;
+  will-change: transform, color;
 }
 
 .color-highlight {
-  color: #af91de;
+  color: var(--accent-soft-purple);
 }
 
 .nav-link:hover {
-  color: #a855f7;
-  text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+  color: var(--accent-purple);
+  filter: drop-shadow(0 0 8px rgba(168, 85, 247, 0.6));
   transform: translateY(-2px);
 }
 
@@ -115,36 +137,34 @@
     display: flex;
     padding: 10px 18px;
     gap: 20px;
-    background: rgba(15, 10, 25, 0.65);
+    background: var(--dock-bg);
     backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border: 1px solid var(--dock-border);
     border-radius: 24px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    box-shadow: var(--shadow-dock);
   }
 
   .dock-item {
     display: flex;
     width: 45px;
     height: 45px;
-    background: rgba(255, 255, 255, 0.03);
+    background: var(--dock-item-bg);
     border-radius: 14px;
     justify-content: center;
     align-items: center;
     text-decoration: none;
-    transition: transform 0.2s ease;
+    transition:
+      transform 0.2s ease,
+      background-color 0.2s ease;
+    will-change: transform;
   }
 
   .dock-item:active {
     transform: scale(0.85);
-    background: rgba(168, 85, 247, 0.2);
+    background: var(--dock-item-active);
   }
 
   .dock-icon {
-    color: #e2e8f0;
-  }
-
-  .color-highlight {
-    color: #af91de;
+    color: var(--text-dock);
   }
 }

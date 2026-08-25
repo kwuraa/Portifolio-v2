@@ -1,28 +1,39 @@
+:root {
+  --term-bg: rgba(15, 10, 25, 0.6);
+  --term-header-bg: #1e1e2e;
+  --term-border: rgba(255, 255, 255, 0.1);
+  --term-text-main: #e2e8f0;
+  --term-text-muted: #94a3b8;
+  --term-accent-purple: #a855f7;
+  --term-accent-green: #4ade80;
+  --term-accent-pink: #f472b6;
+  --btn-close: #ff5f56;
+  --btn-minimize: #ffbd2e;
+  --btn-maximize: #27c93f;
+  --font-mono: "Fira Code", monospace;
+}
+
 .terminal-window {
   width: 100%;
   height: auto;
   min-height: 250px;
-  background-color: rgba(15, 10, 25, 0.6);
-  -webkit-backdrop-filter: blur(12px);
+  background-color: var(--term-bg);
   backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--term-border);
   border-radius: 12px;
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
   overflow: hidden;
-  font-family: "Fira Code", monospace;
-  user-select: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
+  font-family: var(--font-mono);
 }
 
 .terminal-header {
-  background-color: #1e1e2e;
+  background-color: var(--term-header-bg);
   padding: 10px 15px;
   display: flex;
   align-items: center;
   position: relative;
   cursor: grab;
+  user-select: none;
 }
 
 .terminal-header:active {
@@ -41,44 +52,44 @@
 }
 
 .btn-close {
-  background-color: #ff5f56;
+  background-color: var(--btn-close);
 }
 
 .btn-minimize {
-  background-color: #ffbd2e;
+  background-color: var(--btn-minimize);
 }
 
 .btn-maximize {
-  background-color: #27c93f;
+  background-color: var(--btn-maximize);
 }
 
 .terminal-title {
   width: 100%;
   text-align: center;
-  color: #94a3b8;
-  font-size: 12px;
+  color: var(--term-text-muted);
+  font-size: 0.75rem;
   opacity: 0.6;
 }
 
 .terminal-body {
   padding: 20px;
-  color: #e2e8f0;
+  color: var(--term-text-main);
   line-height: 1.6;
 }
 
 .terminal-line {
-  padding-top: 16px;
+  padding-top: 1rem;
 }
 
 .greeting::before {
   content: "❯ ";
-  color: #a855f7;
+  color: var(--term-accent-purple);
   font-weight: bold;
   margin-right: 8px;
 }
 
 .user-host {
-  color: #4ade80;
+  color: var(--term-accent-green);
 }
 
 .command {
@@ -86,38 +97,38 @@
 }
 
 .terminal-content {
-  margin-top: 15px;
+  margin-top: 0.9375rem;
 }
 
 .highlight {
-  color: #a855f7;
+  color: var(--term-accent-purple);
   font-weight: bold;
 }
 
 .bio {
-  color: #94a3b8;
+  color: var(--term-text-muted);
   font-style: italic;
-  margin-top: 16px;
+  margin-top: 1rem;
 }
 
 .skills-list {
-  margin-left: 20px;
-  margin-top: 16px;
+  margin-left: 1.25rem;
+  margin-top: 1rem;
 }
 
 .skill-category {
-  color: #f472b6;
+  color: var(--term-accent-pink);
 }
 
 .mt-20 {
-  margin-top: 20px;
+  margin-top: 1.25rem;
 }
 
 .terminal-cursor {
   display: inline-block;
   width: 8px;
   height: 18px;
-  background-color: white;
+  background-color: #ffffff;
   margin-left: 5px;
   animation: blink 1s infinite;
   vertical-align: middle;
@@ -135,9 +146,7 @@
 
 @media (max-width: 768px) {
   .terminal-window {
-    height: auto;
     min-height: auto;
-    max-width: 100%;
     border: none;
     border-radius: 0;
     box-shadow: none;
