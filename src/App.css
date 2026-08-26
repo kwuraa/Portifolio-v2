@@ -35,6 +35,7 @@ body {
   min-height: 100dvh;
   background: var(--bg-dark);
   color: var(--text-main);
+  overflow-x: hidden;
 }
 
 .mt-10 {
@@ -81,7 +82,7 @@ body {
   grid-template-columns: minmax(0, 1.5fr) minmax(220px, 0.5fr);
   align-items: center;
   gap: 1rem;
-  width: 95rem;
+  width: 100%;
   min-height: 620px;
 }
 
@@ -91,7 +92,6 @@ body {
   height: 560px;
   justify-self: center;
   margin-top: 2.5rem;
-  right: 18%;
 }
 
 .terminalWelcome,
@@ -128,7 +128,7 @@ body {
   left: clamp(200px, 33vw, 670px);
   top: clamp(100px, 17vw, 220px);
   width: clamp(280px, 34vw, 650px);
-  height: clamp(180px, 21vw, 400px);
+  height: clamp(180px, 40vw, 424px);
   z-index: 4;
 }
 
@@ -193,6 +193,29 @@ body {
   }
 }
 
+@media (max-width: 1536px) {
+  .terminalWelcome {
+    position: absolute;
+    left: clamp(24px, 5vw, 120px);
+    width: clamp(320px, 46vw, 795px);
+    height: clamp(200px, 24vw, 330px);
+    z-index: 1;
+  }
+
+  .terminalStack {
+    transform: scale(0.8);
+    transform-origin: top center;
+    margin-bottom: -40px;
+  }
+
+  .terminalServices {
+    left: clamp(200px, 40vw, 670px);
+    top: clamp(100px, 17vw, 208px);
+    width: clamp(280px, 44vw, 658px);
+    height: clamp(180px, 43vw, 449px);
+  }
+}
+
 @media (max-width: 1366px) {
   .hero-section {
     grid-template-columns: minmax(0, 1fr) 220px;
@@ -201,28 +224,7 @@ body {
   }
 
   .windows-container {
-    width: min(100%, 760px);
-    height: 430px;
-  }
-
-  .terminalWelcome {
-    left: clamp(20px, 26vw, 119px);
-    width: min(58vw, 652px);
-    top: -11%;
-    height: clamp(220px, 30vw, 322px);
-  }
-
-  .terminalStack {
-    left: 9%;
-    top: 52%;
-    width: min(42vw, 388px);
-  }
-
-  .terminalServices {
-    left: clamp(240px, 53vw, 520px);
-    top: 176px;
-    width: min(47vw, 620px);
-    height: clamp(190px, 45vw, 400px);
+    zoom: 0.82;
   }
 }
 
@@ -234,6 +236,7 @@ body {
   }
 
   .windows-container {
+    zoom: 1;
     width: min(100%, 620px);
     height: 360px;
   }
