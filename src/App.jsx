@@ -1,19 +1,23 @@
 import { useState, useEffect } from "react";
 import { AnimatePresence } from "framer-motion";
+import { SpeedInsights } from "@vercel/speed-insights/react";
+import { Analytics } from "@vercel/analytics/react";
+
 import Navbar from "./components/Navbar.jsx";
 import Terminal from "./components/Terminal.jsx";
 import Profile from "./components/Profile.jsx";
 import Projects from "./components/Projects.jsx";
-import TypewriterText from "./components/TypewreiterText.jsx";
+import TypewriterText from "./components/TypewriterText.jsx";
 import BootLoader from "./components/BootLoader.jsx";
 import Footer from "./components/Footer.jsx";
-import { SpeedInsights } from "@vercel/speed-insights/react";
-import { Analytics } from "@vercel/analytics/react";
+import MobileTerminal from "./components/MobileTerminal.jsx";
+import MobileAbout from "./components/MobileAbout.jsx";
 
 import WelcomeTerminalContent from "./components/TerminalContents/WelcomeTerminalContent.jsx";
 import ServicesTerminalContent from "./components/TerminalContents/ServicesTerminalContent.jsx";
 import AboutTerminalContent from "./components/TerminalContents/AboutTerminalContent.jsx";
-import MobileTerminal from "./components/MobileTerminal.jsx";
+import EducationTerminalContent from "./components/TerminalContents/EducationTerminalContent.jsx";
+import ExperienceTerminalContent from "./components/TerminalContents/ExperienceTerminalContent.jsx";
 
 import "./App.css";
 
@@ -78,6 +82,29 @@ function App() {
                   </Terminal>
                 </div>
                 <Profile />
+              </>
+            )}
+          </section>
+          <section className="container-about">
+            {isMobile ? (
+              <MobileAbout isLoading={isLoading} />
+            ) : (
+              <>
+                <Terminal
+                  className="terminalEducation"
+                  title="kawamura - bash - education"
+                  isDraggable={false}
+                >
+                  <EducationTerminalContent isLoading={isLoading} />
+                </Terminal>
+
+                <Terminal
+                  className="terminalExperience"
+                  title="kawamura - bash - experience"
+                  isDraggable={false}
+                >
+                  <ExperienceTerminalContent isLoading={isLoading} />
+                </Terminal>
               </>
             )}
           </section>

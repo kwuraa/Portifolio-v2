@@ -7,8 +7,9 @@ const TypewriterText = ({
   delay = 0,
   isLoading = false,
   className = "",
+  onComplete,
 }) => {
-  const animatedText = useTypewriter(text, speed, delay, isLoading);
+  const animatedText = useTypewriter(text, speed, delay, isLoading, onComplete);
 
   return <span className={className}>{animatedText}</span>;
 };

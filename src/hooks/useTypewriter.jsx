@@ -1,6 +1,12 @@
 import { useState, useEffect } from "react";
 
-const useTypewriter = (text, speed = 30, delay = 0, isLoading = false) => {
+const useTypewriter = (
+  text = "",
+  speed = 30,
+  delay = 0,
+  isLoading = false,
+  onComplete,
+) => {
   const [displayedText, setDisplayedText] = useState("");
   const [index, setIndex] = useState(0);
   const [canStart, setCanStart] = useState(false);
@@ -21,7 +27,7 @@ const useTypewriter = (text, speed = 30, delay = 0, isLoading = false) => {
   }, [isLoading, delay]);
 
   useEffect(() => {
-    if (!canStart || isLoading) return;
+    if (!canStart || isLoading || !text) return;
 
     if (index < text.length) {
       const timeoutId = setTimeout(() => {
@@ -30,8 +36,10 @@ const useTypewriter = (text, speed = 30, delay = 0, isLoading = false) => {
       }, speed);
 
       return () => clearTimeout(timeoutId);
+    } else if (index === text.length && typeof onComplete === "function") {
+      onComplete();
     }
-  }, [index, text, speed, canStart, isLoading]);
+  }, [index, text, speed, canStart, isLoading, onComplete]);
 
   return displayedText;
 };
