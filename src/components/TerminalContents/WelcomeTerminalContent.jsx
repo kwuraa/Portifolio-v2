@@ -1,5 +1,5 @@
 import React from "react";
-import TypewriterText from "../TypewreiterText.jsx";
+import TypewriterText from "../TypewriterText.jsx";
 
 const WelcomeTerminalContent = ({ isLoading }) => {
   return (

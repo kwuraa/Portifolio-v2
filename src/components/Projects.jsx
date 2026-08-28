@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { FiTerminal } from "react-icons/fi";
 import "../styles/Projects.css";
 
 const defaultDescriptions = {
@@ -113,7 +114,10 @@ export default function Projects() {
                         loading="lazy"
                       />
                     ) : (
-                      <div className="no-preview">⚡ Terminal Mode</div>
+                      <div className="no-preview">
+                        <FiTerminal style={{ marginRight: "6px" }} /> Terminal
+                        Mode
+                      </div>
                     )}
                   </div>
 

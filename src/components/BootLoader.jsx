@@ -1,19 +1,25 @@
 import react, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import TypewriterText from "./TypewreiterText.jsx";
+import TypewriterText from "./TypewriterText.jsx";
 import "../styles/BootLoader.css";
 
 const BootLoader = ({ onComplete }) => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
+    document.documentElement.style.overflow = "hidden";
+    document.body.style.overflow = "hidden";
     setIsMobile(window.innerWidth <= 768);
 
     const timer = setTimeout(() => {
       onComplete();
     }, 3500);
 
-    return () => clearTimeout(timer);
+    return () => {
+      document.documentElement.style.overflow = "";
+      document.body.style.overflow = "";
+      clearTimeout(timer);
+    };
   }, [onComplete]);
 
   const bootText = isMobile

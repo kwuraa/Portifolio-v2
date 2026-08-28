@@ -184,6 +184,21 @@ body {
   animation: fadeIn 1s ease-in-out forwards;
 }
 
+.container-about {
+  display: flex;
+  gap: 16px;
+  padding-top: 8%;
+}
+
+.terminalEducation {
+  height: 30rem;
+}
+
+.terminalEducation:hover,
+.terminalExperience:hover {
+  transform: scale(1.2);
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
