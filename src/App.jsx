@@ -3,15 +3,15 @@ import { AnimatePresence } from "framer-motion";
 import { SpeedInsights } from "@vercel/speed-insights/react";
 import { Analytics } from "@vercel/analytics/react";
 
-import Navbar from "./components/Navbar.jsx";
+import Navbar from "./pages/Navbar.jsx";
 import Terminal from "./components/Terminal.jsx";
-import Profile from "./components/Profile.jsx";
-import Projects from "./components/Projects.jsx";
+import Profile from "./pages/Profile.jsx";
+import Projects from "./pages/Projects.jsx";
 import TypewriterText from "./components/TypewriterText.jsx";
-import BootLoader from "./components/BootLoader.jsx";
-import Footer from "./components/Footer.jsx";
-import MobileTerminal from "./components/MobileTerminal.jsx";
-import MobileAbout from "./components/MobileAbout.jsx";
+import BootLoader from "./pages/BootLoader.jsx";
+import Footer from "./pages/Footer.jsx";
+import MobileTerminal from "./pages/MobileTerminal.jsx";
+import MobileAbout from "./pages/MobileAbout.jsx";
 
 import WelcomeTerminalContent from "./components/TerminalContents/WelcomeTerminalContent.jsx";
 import ServicesTerminalContent from "./components/TerminalContents/ServicesTerminalContent.jsx";

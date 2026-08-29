@@ -1,6 +1,6 @@
 import react, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import TypewriterText from "./TypewriterText.jsx";
+import TypewriterText from "../components/TypewriterText.jsx";
 import "../styles/BootLoader.css";
 
 const BootLoader = ({ onComplete }) => {

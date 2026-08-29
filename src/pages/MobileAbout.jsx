@@ -1,7 +1,7 @@
 import React from "react";
 
-import EducationTerminalContent from "./TerminalContents/EducationTerminalContent.jsx";
-import ExperienceTerminalContent from "./TerminalContents/ExperienceTerminalContent.jsx";
+import EducationTerminalContent from "../components/TerminalContents/EducationTerminalContent.jsx";
+import ExperienceTerminalContent from "../components/TerminalContents/ExperienceTerminalContent.jsx";
 
 const MobileTerminal = ({ isLoading }) => {
   return (

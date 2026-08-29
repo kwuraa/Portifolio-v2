@@ -1,8 +1,8 @@
 import React from "react";
 import Profile from "./Profile.jsx";
-import WelcomeTerminalContent from "./TerminalContents/WelcomeTerminalContent.jsx";
-import AboutTerminalContent from "./TerminalContents/AboutTerminalContent.jsx";
-import ServicesTerminalContent from "./TerminalContents/ServicesTerminalContent.jsx";
+import WelcomeTerminalContent from "../components/TerminalContents/WelcomeTerminalContent.jsx";
+import AboutTerminalContent from "../components/TerminalContents/AboutTerminalContent.jsx";
+import ServicesTerminalContent from "../components/TerminalContents/ServicesTerminalContent.jsx";
 import "../styles/MobileTerminal.css";
 
 const MobileTerminal = ({ isLoading }) => {
