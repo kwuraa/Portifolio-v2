@@ -92,6 +92,10 @@
   will-change: transform, color;
 }
 
+.userName {
+  font-weight: bold;
+}
+
 .btn-social:hover .social-icons {
   color: var(--accent-purple);
   filter: drop-shadow(0 0 8px rgba(168, 85, 247, 0.6));

@@ -16,6 +16,7 @@ const Profile = () => {
       </section>
       <section className="profile-content">
         <img src={foto} alt="" className="profile-photo" />
+        <span className="userName">Matheus <span className="highlight">Kawamura</span></span>
         <div className="profile-social">
           <a href="https://github.com/kwuraa" className="btn-social">
             <FiGithub className="social-icons" size={38} />
