@@ -3,12 +3,12 @@ import { motion, AnimatePresence } from "framer-motion";
 import "../styles/Profile.css";
 import foto from "../assets/profile.jfif";
 import { FaLinkedin } from "react-icons/fa";
-import { FiGithub } from "react-icons/fi";
+import { FiGithub, FiFileText } from "react-icons/fi";
 import { SiGmail } from "react-icons/si";
 
 const Profile = () => {
   const [copied, setCopied] = useState(false);
-  const myEmail = "kwuraa@gmail.com";
+  const myEmail = "matheus.kawamura@gmail.com";
 
   const handleCopy = async () => {
     try {
@@ -28,6 +28,15 @@ const Profile = () => {
           <span className="btn-minimize"></span>
           <span className="btn-maximize"></span>
         </div>
+        <a
+          href="/curriculo.pdf"
+          download="Matheus_Kawamura_CV.pdf"
+          className="cv-top-link"
+          title="Baixar CV"
+        >
+          <FiFileText size={16} />
+          <span>CV</span>
+        </a>
       </section>
 
       <section className="profile-content">
@@ -42,6 +51,7 @@ const Profile = () => {
             target="_blank"
             rel="noreferrer"
             className="btn-social"
+            title="GitHub"
           >
             <FiGithub className="social-icons" size={38} />
           </a>
@@ -51,6 +61,7 @@ const Profile = () => {
             target="_blank"
             rel="noreferrer"
             className="btn-social"
+            title="LinkedIn"
           >
             <FaLinkedin className="social-icons" size={38} />
           </a>

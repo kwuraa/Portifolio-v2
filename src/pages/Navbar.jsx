@@ -5,6 +5,7 @@ import { FaArrowDown } from "react-icons/fa";
 import { AiFillHome } from "react-icons/ai";
 import { TbFoldersFilled } from "react-icons/tb";
 import { BsFillTelephoneFill } from "react-icons/bs";
+import { FiFileText } from "react-icons/fi";
 
 export default function Navbar() {
   const [isHidden, setIsHidden] = useState(false);
@@ -61,18 +62,26 @@ export default function Navbar() {
         <nav className="dock">
           <a href="#home" className="dock-item">
             <span className="dock-icon">
-              <AiFillHome size={38} />
+              <AiFillHome size={20} />
             </span>
           </a>
           <a href="#projects" className="dock-item">
             <span className="dock-icon">
-              <TbFoldersFilled size={38} />
+              <TbFoldersFilled size={20} />
             </span>
           </a>
           <a href="#contact" className="dock-item">
             <span className="dock-icon color-highlight">
-              <BsFillTelephoneFill size={38} />
+              <BsFillTelephoneFill size={20} />
             </span>
+          </a>
+          <a
+            href="/curriculo.pdf"
+            download="Matheus_Kawamura_CV.pdf"
+            className="dock-item cv-dock-item"
+            title="Baixar CV"
+          >
+            <FiFileText size={20} />
           </a>
         </nav>
       </section>

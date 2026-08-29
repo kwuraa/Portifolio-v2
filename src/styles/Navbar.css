@@ -167,4 +167,19 @@
   .dock-icon {
     color: var(--text-dock);
   }
+
+  .cv-dock-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--profile-text, #ffffff);
+    transition:
+      color 0.2s ease,
+      transform 0.2s ease;
+  }
+
+  .cv-dock-item:active {
+    color: var(--accent-cyan, #8be9fd);
+    transform: scale(0.95);
+  }
 }

@@ -32,10 +32,13 @@
 }
 
 .terminal-profile-header {
-  padding: 10px 15px;
+  padding: 12px 16px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   position: relative;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .terminal-btn-profile {
@@ -159,6 +162,26 @@
   margin-right: 0.2rem;
 }
 
+.cv-top-link {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--profile-text, #ffffff);
+  opacity: 0.7;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.75rem;
+  text-decoration: none;
+  transition:
+    opacity 0.2s ease,
+    color 0.2s ease;
+  margin-left: auto;
+}
+
+.cv-top-link:hover {
+  opacity: 1;
+  color: var(--accent-cyan, #8be9fd);
+}
+
 @media (max-width: 1366px) {
   .profile-window {
     width: clamp(220px, 20vw, 260px);
@@ -188,5 +211,13 @@
 
   .terminal-btn-profile {
     display: none;
+  }
+
+  .cv-top-link {
+    display: none;
+  }
+
+  .profile-content {
+    margin: 20px auto 30px auto;
   }
 }

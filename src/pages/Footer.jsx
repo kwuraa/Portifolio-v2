@@ -1,4 +1,5 @@
 import React from "react";
+import { FiFileText } from "react-icons/fi";
 import "../styles/Footer.css";
 
 export default function Footer() {
@@ -15,8 +16,17 @@ export default function Footer() {
         </div>
 
         <div className="footer-copy">
-          <p>© {currentYear} kawamura. Built with React & Framer Motion.</p>
+          <p>© {currentYear} Matheus Kawamura. All rights reserved.</p>
         </div>
+        <a
+          href="/curriculo.pdf"
+          download="Matheus_Kawamura_CV.pdf"
+          className="footer-cv-btn"
+          title="Download Currículo"
+        >
+          <FiFileText size={16} />
+          <span>curriculum.pdf</span>
+        </a>
       </div>
     </footer>
   );
