@@ -42,7 +42,7 @@ const Terminal = ({
       initial={!isDraggable ? { opacity: 0, y: 30 } : false}
       whileInView={!isDraggable ? { opacity: 1, y: 0 } : false}
       viewport={{ once: true, margin: "-50px" }}
-      transition={{ duration: 0.5, delay: 1.2, ease: "easeInOut" }}
+      transition={{ duration: 0.5, delay: 0.9, ease: "easeInOut" }}
       whileTap={
         shouldDrag
           ? { scale: 1.05, cursor: "grabbing", transition: { duration: 0.05 } }
