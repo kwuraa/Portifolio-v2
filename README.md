@@ -42,12 +42,6 @@ src/
 ├── main.jsx
 ├── assets/
 ├── components/
-│   ├── BootLoader.jsx
-│   ├── Footer.jsx
-│   ├── MobileTerminal.jsx
-│   ├── Navbar.jsx
-│   ├── Profile.jsx
-│   ├── Projects.jsx
 │   ├── Terminal.jsx
 │   ├── TypewreiterText.jsx
 │   └── TerminalContents/
@@ -56,6 +50,13 @@ src/
 │       └── WelcomeTerminalContent.jsx
 ├── hooks/
 │   └── useTypewriter.jsx
+├── pages/
+│   ├── BootLoader.jsx
+│   ├── Footer.jsx
+│   ├── MobileTerminal.jsx
+│   ├── Navbar.jsx
+│   ├── Profile.jsx
+│   └── Projects.jsx
 ├── styles/
 │   ├── BootLoader.css
 │   ├── Footer.css
