@@ -19,7 +19,7 @@ export default function Footer() {
           <p>© {currentYear} Matheus Kawamura. All rights reserved.</p>
         </div>
         <a
-          href="/curriculo.pdf"
+          href="/Matheus_Kawamura_CV.pdf"
           download="Matheus_Kawamura_CV.pdf"
           className="footer-cv-btn"
           title="Download Currículo"

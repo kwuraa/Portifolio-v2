@@ -29,7 +29,7 @@ const Profile = () => {
           <span className="btn-maximize"></span>
         </div>
         <a
-          href="/curriculo.pdf"
+          href="/Matheus_Kawamura_CV.pdf"
           download="Matheus_Kawamura_CV.pdf"
           className="cv-top-link"
           title="Baixar CV"

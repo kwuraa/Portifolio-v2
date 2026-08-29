@@ -76,7 +76,7 @@ export default function Navbar() {
             </span>
           </a>
           <a
-            href="/curriculo.pdf"
+            href="/Matheus_Kawamura_CV.pdf"
             download="Matheus_Kawamura_CV.pdf"
             className="dock-item cv-dock-item"
             title="Baixar CV"
