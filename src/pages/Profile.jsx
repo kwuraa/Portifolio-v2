@@ -8,7 +8,7 @@ import { SiGmail } from "react-icons/si";
 
 const Profile = () => {
   const [copied, setCopied] = useState(false);
-  const myEmail = "matheus.kawamura@gmail.com";
+  const myEmail = "kwuraa@gmail.com";
 
   const handleCopy = async () => {
     try {
