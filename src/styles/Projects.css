@@ -175,6 +175,18 @@
   color: var(--text-stars);
 }
 
+.private-tag {
+  font-size: 0.75rem;
+  color: #888;
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+/* .project-card.disabled-card {
+  cursor: default;
+} */
+
 @media (max-width: 768px) {
   .projects-grid {
     grid-template-columns: 1fr;

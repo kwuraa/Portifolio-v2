@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { FiTerminal } from "react-icons/fi";
+import { FiTerminal, FiLock } from "react-icons/fi";
 import "../styles/Projects.css";
 
 const defaultDescriptions = {
@@ -10,13 +10,25 @@ const defaultDescriptions = {
   CinetCalc: "Calculadora técnica para análises e engenharia.",
 };
 
+const manualProjects = [
+  {
+    id: "cinetcalc",
+    name: "Calculadora de Impacto - Docksteel",
+    html_url: "https://cinetcalc.netlify.app/",
+    homepage: "https://cinetcalc.netlify.app/",
+    language: "HTML | CSS | JS ",
+    description: defaultDescriptions["CinetCalc"],
+    isPrivate: true,
+  },
+];
+
 export default function Projects() {
   const [projects, setProjects] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const USERNAME = "kwuraa";
-    const URL = `https://api.github.com/users/${USERNAME}/repos?sort=updated&per_page=4`;
+    const URL = `https://api.github.com/users/${USERNAME}/repos?sort=updated&per_page=3`;
 
     const fallbackProjects = [
       {
@@ -24,28 +36,18 @@ export default function Projects() {
         name: "erp-system",
         html_url: "https://github.com/kwuraa/erp-system",
         language: "TypeScript",
-        stargazers_count: 0,
       },
       {
         id: 2,
         name: "erp-backend",
         html_url: "https://github.com/kwuraa/erp-backend",
         language: "TypeScript",
-        stargazers_count: 0,
       },
       {
         id: 3,
         name: "Portifolio-v2",
         html_url: "https://github.com/kwuraa/Portifolio-v2",
         language: "JavaScript",
-        stargazers_count: 0,
-      },
-      {
-        id: 4,
-        name: "CinetCalc",
-        html_url: "https://github.com/kwuraa/CinetCalc",
-        language: "CSS",
-        stargazers_count: 0,
       },
     ];
 
@@ -55,14 +57,11 @@ export default function Projects() {
         return res.json();
       })
       .then((data) => {
-        if (Array.isArray(data)) {
-          setProjects(data);
-        } else {
-          setProjects(fallbackProjects);
-        }
+        const githubData = Array.isArray(data) ? data : fallbackProjects;
+        setProjects([...manualProjects, ...githubData]);
       })
       .catch(() => {
-        setProjects(fallbackProjects);
+        setProjects([...manualProjects, ...fallbackProjects]);
       })
       .finally(() => {
         setLoading(false);
@@ -86,14 +85,23 @@ export default function Projects() {
                 defaultDescriptions[repo.name] ||
                 "Aplicação web focada em alta performance e UI/UX.";
 
+              const isLink = Boolean(repo.html_url);
+              const CardComponent = isLink ? motion.a : motion.div;
+
+              const cardProps = isLink
+                ? {
+                    href: repo.html_url,
+                    target: "_blank",
+                    rel: "noopener noreferrer",
+                  }
+                : {};
+
               return (
-                <motion.a
+                <CardComponent
                   key={repo.id}
-                  href={repo.html_url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="project-card"
+                  className={`project-card ${!isLink ? "disabled-card" : ""}`}
                   whileHover={{ y: -4 }}
+                  {...cardProps}
                 >
                   <div className="card-header">
                     <div className="window-dots">
@@ -109,7 +117,9 @@ export default function Projects() {
                   <div className="project-preview">
                     {repo.homepage ? (
                       <img
-                        src={`https://api.microlink.io?url=${encodeURIComponent(repo.homepage)}&screenshot=true&embed=screenshot.url`}
+                        src={`https://api.microlink.io?url=${encodeURIComponent(
+                          repo.homepage,
+                        )}&screenshot=true&embed=screenshot.url`}
                         alt={repo.name}
                         loading="lazy"
                       />
@@ -128,8 +138,13 @@ export default function Projects() {
 
                   <div className="card-footer">
                     <span className="tech-tag">{repo.language || "Dev"}</span>
+                    {repo.isPrivate && (
+                      <span className="private-tag">
+                        <FiLock style={{ marginRight: "4px" }} /> Empresa
+                      </span>
+                    )}
                   </div>
-                </motion.a>
+                </CardComponent>
               );
             })}
           </div>
